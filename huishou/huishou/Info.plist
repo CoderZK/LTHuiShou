@@ -79,10 +79,6 @@
 	<string>回收在与商家聊天时需要访问您的麦克风。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>回收在与商家聊天时需要访问您的相册。</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

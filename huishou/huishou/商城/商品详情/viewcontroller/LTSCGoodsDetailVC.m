@@ -494,6 +494,12 @@
         if (indexPath.row == 0) {
             [self.guigeView show];
         }else if (indexPath.row == 1) {//选择地址
+            
+            if(!ISLOGIN) {
+                [self gotoLogin];
+                return;
+            }
+            
             LTSCSelectAddressVC *vc = [[LTSCSelectAddressVC alloc] init];
             vc.isSelect = YES;
             WeakObj(self);
@@ -703,6 +709,12 @@
         [selfWeak.navigationController pushViewController:vc animated:YES];
     };
     self.bottomView.lijigoumaiBlock = ^{//立即购买
+        
+        if(!ISLOGIN) {
+            [selfWeak gotoLogin];
+            return;
+        }
+        
         if (self.guigeView.guigeArr.count == 0) {
             [selfWeak buyNowAction];
         }else {
@@ -717,6 +729,12 @@
     };
     
     self.bottomView.addShopCarBlock = ^{//加入购物车操作
+        
+        if(!ISLOGIN) {
+            [selfWeak gotoLogin];
+            return;
+        }
+        
         if (self.guigeView.guigeArr.count == 0) {
             [selfWeak addCarAction];
         }else {

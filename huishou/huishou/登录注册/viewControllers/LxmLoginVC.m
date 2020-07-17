@@ -11,6 +11,7 @@
 #import "LxmTabBarVC.h"
 #import "LxmRegistVC.h"
 #import "LxmFirstFindPasswordVC.h"
+#import "LxmEventBus.h"
 
 @interface LxmLoginVC ()<UITextFieldDelegate>
 
@@ -282,7 +283,10 @@
 
 - (void)closeAction {
 //     UIApplication.sharedApplication.keyWindow.rootViewController = [LxmTabBarVC new];
-     [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.isPopToRootVC) {
+         [LxmEventBus sendEvent:@"goback" data:nil];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /// 立即注册

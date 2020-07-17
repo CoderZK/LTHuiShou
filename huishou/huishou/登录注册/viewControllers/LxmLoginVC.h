@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LxmLoginVC : BaseTableViewController
-
+@property(nonatomic,assign)BOOL isPopToRootVC;
 @end
 
 NS_ASSUME_NONNULL_END

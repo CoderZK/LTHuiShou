@@ -14,8 +14,8 @@
     
     
     if ([message isEqualToString:@"未登录"]) {
-               
-               [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[BaseNavigationController alloc] initWithRootViewController:[LxmLoginVC new]] animated:YES completion:nil];
+        LxmLoginVC * loginVC = [[LxmLoginVC alloc] init];
+               [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[BaseNavigationController alloc] initWithRootViewController:loginVC] animated:YES completion:nil];
                
     }else {
         UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];

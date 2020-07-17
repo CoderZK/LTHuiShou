@@ -123,8 +123,9 @@
 - (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 //    LxmGoodListModel * model = [self.titleArr1 lxm_object1AtIndex:indexPath.item];
-//    CGFloat w  = [model.content getSizeWithMaxSize:CGSizeMake(ScreenW , 50) withFontSize:18].width;
-    return CGSizeMake(floor((ScreenW - 30)/self.titleArr.count), 50);
+    CGFloat w  = [self.titleArr[indexPath.item].category_name getSizeWithMaxSize:CGSizeMake(ScreenW , 50) withFontSize:16].width + 10;
+//    return CGSizeMake(floor((ScreenW - 30)/self.titleArr.count), 50);
+    return CGSizeMake(w ,50);
 }
 
 - (void)setTitleArr:(NSArray<LxmHomeFirstTypeModel *> *)titleArr {
