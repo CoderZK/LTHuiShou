@@ -275,7 +275,7 @@
         }];
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.imgView.mas_bottom).offset(15);
-            make.centerX.equalTo(self);
+            make.left.right.equalTo(self);
         }];
     }
     return self;

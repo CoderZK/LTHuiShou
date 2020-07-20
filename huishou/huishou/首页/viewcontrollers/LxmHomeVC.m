@@ -123,9 +123,10 @@
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.minimumLineSpacing = (ScreenW - 30 - 56*4)/3;
+//        layout.minimumLineSpacing = (ScreenW - 30 - 56*4)/3;
+        layout.minimumLineSpacing = 10;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.itemSize = CGSizeMake(56,86);
+        layout.itemSize = CGSizeMake((ScreenW - 30 - 30)/4,86);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(15, (ScreenW - 30) * 0.4 + 15 + 22, ScreenW - 30, 90) collectionViewLayout:layout];
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.backgroundColor = UIColor.whiteColor;
@@ -311,6 +312,7 @@
     if (collectionView == _collectionView) {
         [itemCell.imgView sd_setImageWithURL:[NSURL URLWithString:self.typeModel.result.list[indexPath.item].type_pic] placeholderImage:[UIImage imageNamed:@"789789"] options:SDWebImageRetryFailed];
         itemCell.titleLabel.text = self.typeModel.result.list[indexPath.item].category_name;
+        itemCell.titleLabel.textAlignment = NSTextAlignmentCenter;
     } else {
         [itemCell.imgView sd_setImageWithURL:[NSURL URLWithString:self.homeModel.result.map.third[indexPath.item].img_path] placeholderImage:[UIImage imageNamed:@"789789"] options:SDWebImageRetryFailed];
         itemCell.titleLabel.text = self.homeModel.result.map.third[indexPath.item].title;
